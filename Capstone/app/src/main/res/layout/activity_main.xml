@@ -27,7 +27,7 @@
         tools:text="Follow Distance" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/distPlusBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginLeft="180dp"
@@ -50,7 +50,7 @@
         app:srcCompat="@drawable/minus" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/distText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="112dp"
