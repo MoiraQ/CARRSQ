@@ -200,17 +200,20 @@
         android:id="@+id/imageButton"
         android:layout_width="40dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/minus"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="148dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/minus" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="605dp"
         android:layout_height="58dp"
-        android:background="@android:color/red"
+        android:background="@android:color/holo_red_dark"
         android:text="RETURN TO MANUAL DRIVING"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"

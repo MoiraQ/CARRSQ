@@ -15,15 +15,18 @@
         app:srcCompat="@drawable/topbarblank" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/switchauto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="171dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="69dp"
         android:background="@drawable/circle"
         android:text="Begin&#10;Automated&#10;Driving"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="124dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 </android.support.constraint.ConstraintLayout>

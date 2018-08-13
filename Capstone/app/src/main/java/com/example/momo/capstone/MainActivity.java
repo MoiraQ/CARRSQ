@@ -12,20 +12,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.manual_mode);
 
-        Button disPlusBtn = (Button) findViewById(R.id.distPlusBtn);
-        disPlusBtn.setOnClickListener(new View.OnClickListener() {
+        Button switchauto = (Button) findViewById(R.id.switchauto);
+        switchauto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //action
-                TextView distText = (TextView) findViewById(R.id.distText);
+                setContentView(R.layout.activity_main);
 
-                int distInt = Integer.parseInt(distText.getText().toString());
-                int distIntNew = distInt + 1;
+                Button disPlusBtn = (Button) findViewById(R.id.distPlusBtn);
+                disPlusBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //action
+                        TextView distText = (TextView) findViewById(R.id.distText);
 
-                distText.setText(distIntNew + "");
+                        int distInt = Integer.parseInt(distText.getText().toString());
+                        int distIntNew = distInt + 1;
+
+                        distText.setText(distIntNew + "");
+                    }
+                });
             }
         });
+
+
     }
 }
