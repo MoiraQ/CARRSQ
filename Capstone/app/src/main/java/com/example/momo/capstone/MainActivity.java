@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
                     final int minFollowDist = 1;
                     final int maxFollowDist = 10; //seconds
                     final int minSpeed = 0;
-                    final int maxSpeed = 200; //km/h
+                    final int maxSpeed = 60; //km/h
 
-                Button distPlusBtn = (Button) findViewById(R.id.distPlusBtn);
+                final Button distPlusBtn = (Button) findViewById(R.id.distPlusBtn);
                 distPlusBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -55,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
                         if (distInt < maxFollowDist) {
                             distInt++;
                             distDisplay.setText(distInt + "");
+                        }
+
+                        if (distInt == maxFollowDist){
+                            distPlusBtn.setVisibility(View.INVISIBLE);
+                        }
+                        if (distInt != maxFollowDist){
+                            distPlusBtn.setVisibility(View.VISIBLE);
                         }
 
                     }

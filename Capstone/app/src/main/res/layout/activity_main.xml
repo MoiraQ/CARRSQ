@@ -14,7 +14,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:contentDescription="@string/follow_distance"
-        android:text="@string/label"
+        android:text="Follow Distance"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
@@ -23,8 +23,7 @@
         android:visibility="visible"
         app:fontFamily="sans-serif"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Follow Distance" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/distDisplay"
@@ -83,7 +82,7 @@
         android:layout_marginStart="420dp"
         android:layout_marginTop="64dp"
         android:contentDescription="@string/follow_distance"
-        android:text="@string/label"
+        android:text="Speed"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
@@ -92,8 +91,7 @@
         android:visibility="visible"
         app:fontFamily="sans-serif"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Speed" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/spdDisplay"
