@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manual_mode);
 
+        final int maxFollowDist = 10; //seconds
+        final int maxSpeed = 200; //km/h
+
         Button switchauto = (Button) findViewById(R.id.switchauto);
         switchauto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,12 +29,29 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         //action
-                        TextView distText = (TextView) findViewById(R.id.distText);
+                        TextView distDisplay = (TextView) findViewById(R.id.distDisplay);
+                        int distInt = Integer.parseInt(distDisplay.getText().toString());
 
-                        int distInt = Integer.parseInt(distText.getText().toString());
-                        int distIntNew = distInt + 1;
+                        if (distInt < maxFollowDist) {
+                            distInt++;
+                            distDisplay.setText(distInt + "");
+                        }
 
-                        distText.setText(distIntNew + "");
+                    }
+                });
+
+                Button spdPlusBtn = (Button) findViewById(R.id.spdPlusBtn);
+                spdPlusBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //action
+                        TextView spdDisplay = (TextView) findViewById(R.id.spdDisplay);
+                        int spdInt = Integer.parseInt(spdDisplay.getText().toString());
+
+                        if (spdInt < maxSpeed) {
+                            spdInt++;
+                            spdDisplay.setText(spdInt + "");
+                        }
                     }
                 });
             }
