@@ -26,6 +26,7 @@
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:onClick= "manualtoauto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 

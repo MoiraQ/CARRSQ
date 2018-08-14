@@ -218,6 +218,7 @@
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:onClick="autotomanual"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
