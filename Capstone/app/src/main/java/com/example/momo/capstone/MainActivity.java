@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manual_mode);
 
+        final int minFollowDist = 1;
         final int maxFollowDist = 10; //seconds
+        final int minSpeed = 0;
         final int maxSpeed = 200; //km/h
 
         Button switchauto = (Button) findViewById(R.id.switchauto);
@@ -24,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 //action
                 setContentView(R.layout.activity_main);
 
-                Button disPlusBtn = (Button) findViewById(R.id.distPlusBtn);
-                disPlusBtn.setOnClickListener(new View.OnClickListener() {
+                Button distPlusBtn = (Button) findViewById(R.id.distPlusBtn);
+                distPlusBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //action
@@ -39,6 +41,23 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+
+                Button distNegBtn = (Button) findViewById(R.id.distNegBtn);
+                distNegBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //action
+                        TextView distDisplay = (TextView) findViewById(R.id.distDisplay);
+                        int distInt = Integer.parseInt(distDisplay.getText().toString());
+
+                        if (distInt > minFollowDist) {
+                            distInt--;
+                            distDisplay.setText(distInt + "");
+                        }
+
+                    }
+                });
+
 
                 Button spdPlusBtn = (Button) findViewById(R.id.spdPlusBtn);
                 spdPlusBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +73,24 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+                Button spdNegBtn = (Button) findViewById(R.id.spdNegBtn);
+                spdNegBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //action
+                        TextView spdDisplay = (TextView) findViewById(R.id.spdDisplay);
+                        int spdInt = Integer.parseInt(spdDisplay.getText().toString());
+
+                        if (spdInt > minSpeed) {
+                            spdInt--;
+                            spdDisplay.setText(spdInt + "");
+                        }
+                    }
+                });
+
+                Button laneLeftBtn = (Button) findViewById(R.id.laneLeftBtn);
+                Button laneRightBtn = (Button) findViewById(R.id.laneRightBtn);
             }
         });
 
