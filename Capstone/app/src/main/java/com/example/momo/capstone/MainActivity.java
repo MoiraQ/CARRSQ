@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manual_mode);
 
-<<<<<<< HEAD
-
     }
 
     public void manualtoauto(View v){
@@ -36,19 +34,15 @@ public class MainActivity extends AppCompatActivity {
                 int number = (int) millisUntilFinished / 1000;
                 countdown.setText(String.valueOf(number));
             }
-
-=======
-        final int minFollowDist = 1;
-        final int maxFollowDist = 10; //seconds
-        final int minSpeed = 0;
-        final int maxSpeed = 200; //km/h
-
-        Button switchauto = (Button) findViewById(R.id.switchauto);
-        switchauto.setOnClickListener(new View.OnClickListener() {
->>>>>>> 42661d980379249a2741df25179cc761b5730437
             @Override
             public void onFinish() {
                 setContentView(R.layout.activity_main);
+
+
+                    final int minFollowDist = 1;
+                    final int maxFollowDist = 10; //seconds
+                    final int minSpeed = 0;
+                    final int maxSpeed = 200; //km/h
 
                 Button distPlusBtn = (Button) findViewById(R.id.distPlusBtn);
                 distPlusBtn.setOnClickListener(new View.OnClickListener() {
