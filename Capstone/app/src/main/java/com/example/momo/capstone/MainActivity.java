@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manual_mode);
 
+<<<<<<< HEAD
 
     }
 
@@ -36,23 +37,84 @@ public class MainActivity extends AppCompatActivity {
                 countdown.setText(String.valueOf(number));
             }
 
+=======
+        final int minFollowDist = 1;
+        final int maxFollowDist = 10; //seconds
+        final int minSpeed = 0;
+        final int maxSpeed = 200; //km/h
+
+        Button switchauto = (Button) findViewById(R.id.switchauto);
+        switchauto.setOnClickListener(new View.OnClickListener() {
+>>>>>>> 42661d980379249a2741df25179cc761b5730437
             @Override
             public void onFinish() {
                 setContentView(R.layout.activity_main);
 
-                Button disPlusBtn = (Button) findViewById(R.id.distPlusBtn);
-                disPlusBtn.setOnClickListener(new View.OnClickListener() {
+                Button distPlusBtn = (Button) findViewById(R.id.distPlusBtn);
+                distPlusBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //action
-                        TextView distText = (TextView) findViewById(R.id.distText);
+                        TextView distDisplay = (TextView) findViewById(R.id.distDisplay);
+                        int distInt = Integer.parseInt(distDisplay.getText().toString());
 
-                        int distInt = Integer.parseInt(distText.getText().toString());
-                        int distIntNew = distInt + 1;
+                        if (distInt < maxFollowDist) {
+                            distInt++;
+                            distDisplay.setText(distInt + "");
+                        }
 
-                        distText.setText(distIntNew + "");
                     }
                 });
+
+                Button distNegBtn = (Button) findViewById(R.id.distNegBtn);
+                distNegBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //action
+                        TextView distDisplay = (TextView) findViewById(R.id.distDisplay);
+                        int distInt = Integer.parseInt(distDisplay.getText().toString());
+
+                        if (distInt > minFollowDist) {
+                            distInt--;
+                            distDisplay.setText(distInt + "");
+                        }
+
+                    }
+                });
+
+
+                Button spdPlusBtn = (Button) findViewById(R.id.spdPlusBtn);
+                spdPlusBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //action
+                        TextView spdDisplay = (TextView) findViewById(R.id.spdDisplay);
+                        int spdInt = Integer.parseInt(spdDisplay.getText().toString());
+
+                        if (spdInt < maxSpeed) {
+                            spdInt++;
+                            spdDisplay.setText(spdInt + "");
+                        }
+                    }
+                });
+
+                Button spdNegBtn = (Button) findViewById(R.id.spdNegBtn);
+                spdNegBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //action
+                        TextView spdDisplay = (TextView) findViewById(R.id.spdDisplay);
+                        int spdInt = Integer.parseInt(spdDisplay.getText().toString());
+
+                        if (spdInt > minSpeed) {
+                            spdInt--;
+                            spdDisplay.setText(spdInt + "");
+                        }
+                    }
+                });
+
+                Button laneLeftBtn = (Button) findViewById(R.id.laneLeftBtn);
+                Button laneRightBtn = (Button) findViewById(R.id.laneRightBtn);
             }
         }.start();
     }
