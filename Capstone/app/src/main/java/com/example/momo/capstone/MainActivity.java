@@ -44,7 +44,13 @@ public class MainActivity extends AppCompatActivity {
                     final int minSpeed = 0;
                     final int maxSpeed = 60; //km/h
 
+                // micromanagement button declarations
                 final Button distPlusBtn = (Button) findViewById(R.id.distPlusBtn);
+                final Button distNegBtn = (Button) findViewById(R.id.distNegBtn);
+                final Button spdPlusBtn = (Button) findViewById(R.id.spdPlusBtn);
+                final Button spdNegBtn = (Button) findViewById(R.id.spdNegBtn);
+
+
                 distPlusBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -57,17 +63,17 @@ public class MainActivity extends AppCompatActivity {
                             distDisplay.setText(distInt + "");
                         }
 
-                        if (distInt == maxFollowDist){
+                        if (distInt >= maxFollowDist){
                             distPlusBtn.setVisibility(View.INVISIBLE);
                         }
-                        if (distInt != maxFollowDist){
-                            distPlusBtn.setVisibility(View.VISIBLE);
+                        if (distInt > minFollowDist){
+                            distNegBtn.setVisibility(View.VISIBLE);
                         }
 
                     }
                 });
 
-                Button distNegBtn = (Button) findViewById(R.id.distNegBtn);
+
                 distNegBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -80,11 +86,18 @@ public class MainActivity extends AppCompatActivity {
                             distDisplay.setText(distInt + "");
                         }
 
+                        if (distInt < maxFollowDist){
+                            distPlusBtn.setVisibility(View.VISIBLE);
+                        }
+                        if (distInt <= minFollowDist){
+                            distNegBtn.setVisibility(View.INVISIBLE);
+                        }
+
                     }
                 });
 
 
-                Button spdPlusBtn = (Button) findViewById(R.id.spdPlusBtn);
+
                 spdPlusBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -96,10 +109,17 @@ public class MainActivity extends AppCompatActivity {
                             spdInt++;
                             spdDisplay.setText(spdInt + "");
                         }
+
+                        if (spdInt >= maxSpeed){
+                            spdPlusBtn.setVisibility(View.INVISIBLE);
+                        }
+                        if (spdInt > minSpeed){
+                            spdNegBtn.setVisibility(View.VISIBLE);
+                        }
                     }
                 });
 
-                Button spdNegBtn = (Button) findViewById(R.id.spdNegBtn);
+
                 spdNegBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -110,6 +130,13 @@ public class MainActivity extends AppCompatActivity {
                         if (spdInt > minSpeed) {
                             spdInt--;
                             spdDisplay.setText(spdInt + "");
+                        }
+
+                        if (spdInt < maxSpeed){
+                            spdPlusBtn.setVisibility(View.VISIBLE);
+                        }
+                        if (spdInt <= minSpeed){
+                            spdNegBtn.setVisibility(View.INVISIBLE);
                         }
                     }
                 });
